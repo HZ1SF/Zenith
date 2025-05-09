@@ -51,6 +51,7 @@
 
 <body>
     <div class="container">
+<<<<<<< HEAD
         <header>
             <img src="assets/pwa_icons/windows/Square44x44Logo.scale-125.png" alt="Zenith Satellite Tracker"
                 class="zenith-logo">
@@ -74,25 +75,39 @@
                 <button id="open-help" class="help-button">
                     <i class="fa-solid fa-circle-question" style="margin-right: 6px;"></i>Help
                 </button>
+=======
+        <header><img src="assets/pwa_icons/windows/Square44x44Logo.scale-125.png" alt="Zenith Satellite Tracker" class="zenith-logo"><h1>Zenith Satellite Tracker</h1>
+            <div class="header-buttons">
+                <button id="open-sat-panel-btn" class="sat-button-header">لوحة CSN</button>
+                <button id="open-schedule" class="schedule-button">جدول</button>
+                <button id="open-sked-planning" class="schedule-button">ترتيب موعد اتصال</button>
+                <button id="open-aprs" class="aprs-button">APRS</button>
+                <button id="open-options" class="options-button">خيارات</button>
+                <button id="open-help" class="help-button">مساعدة</button>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
             </div>
         </header>
 
         <div class="dashboard">
             <div class="sidebar">
                 <div class="passes-panel">
+<<<<<<< HEAD
                     <h2 style="display: flex; justify-content: space-between; align-items: center;">
                         <span>Upcoming Passes</span>
                         <button id="open-passes-popup" class="popup-button" title="Open in separate window (horizontal layout)" style="background: #4a90e2; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8em; margin-left: 8px;">
                             <i class="fa-solid fa-window-maximize"></i>
                         </button>
                     </h2>
+=======
+                    <h2>مرور قادم</h2>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                     <div id="upcoming-passes" class="panel-content">
                         <!-- Pass information will be added here dynamically -->
                     </div>
                 </div>
 
                 <div class="roves-panel">
-                    <h2>Upcoming Roves</h2>
+                    <h2>جولات تشغيلية قادمة</h2>
                     <div id="upcoming-roves" class="panel-content">
                         <!-- Rove information will be added here dynamically -->
                     </div>
@@ -100,6 +115,7 @@
             </div>
 
             <div class="map-container">
+<<<<<<< HEAD
                 <div id="map-container" style="position: relative;">
                     <canvas id="satellite-canvas" width="3600" height="1800"></canvas>
                     <!-- Keep existing controls inside -->
@@ -151,28 +167,41 @@
                         #close-partner-overlay:hover { color: #d00; opacity: 1; }
                         </style>
                     </div>
+=======
+                <!-- Replace Leaflet div with Canvas -->
+                <div id="map-container"><canvas id="satellite-canvas" width="3600" height="1800"></canvas><!-- Keep existing controls inside -->
+                    <div id="amsat-status-button" class="map-control-button" title="إبلاغ AMSAT عن حالة القمر الصناعي">حالة التقرير</div>
+                    <!-- Add other map controls if needed -->
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                 </div>
 
                 <!-- Add AMSAT status dialog -->
                 <div id="amsat-status-dialog" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>Report Status to AMSAT</h2>
-                            <span class="close amsat-close">&times;</span>
-                        </div>
+                            <h2>AMSAT الإبلاغ عن الحالة إلى</h2><span class="close amsat-close">×</span></div>
                         <div class="modal-body">
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label for="amsat-satellite-name">Satellite:</label>
                                 <div id="amsat-satellite-name">--</div>
                             </div>
                             <div class="form-group">
                                 <label for="amsat-status-select">Status:</label>
+=======
+                                <label>القمر:</label>
+                                <div id="amsat-satellite-name">--</div>
+                            </div>
+                            <div class="form-group">
+                                <label>الحالة:</label>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 <select id="amsat-status-select">
-                                    <option value="Heard">Heard</option>
-                                    <option value="Not Heard">Not Heard</option>
+                                    <option value="Heard">سُمع</option>
+                                    <option value="Not Heard">لم يُسمع</option>
                                 </select>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label for="amsat-callsign">Callsign:</label>
                                 <input type="text" id="amsat-callsign" placeholder="Enter your callsign">
                             </div>
@@ -182,29 +211,36 @@
                             </div>
                             <div class="form-group">
                                 <label for="amsat-time">Time:</label>
+=======
+                                <label>إشارة النداء:</label><input type="text" id="amsat-callsign" placeholder="Enter your callsign"></div>
+                            <div class="form-group">
+                                <label>الترقيم الشبكي:</label>
+                                <div id="amsat-gridsquare">--</div>
+                            </div>
+                            <div class="form-group">
+                                <label>الوقت:</label>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 <div id="amsat-time">--</div>
                             </div>
                             <div id="amsat-status-message" class="status-message"></div>
                         </div>
                         <div class="modal-footer">
-                            <button id="submit-amsat-status">Submit Report</button>
+                            <button id="submit-amsat-status">تقديم تقرير</button>
                         </div>
                     </div>
                 </div>
                 <!-- Add before the satellite info panel -->
                 <div id="polar-radar-panel" class="polar-radar-panel">
                     <div class="info-header">
-                        <h3 id="polar-radar-title">Pass Visualization</h3>
+                        <h3 id="polar-radar-title">تصور المرور</h3>
                         <button id="close-polar-radar" class="close-button">×</button>
                     </div>
-                    <div class="polar-radar-content">
-                        <canvas id="polar-radar-chart"></canvas>
-                    </div>
+                    <div class="polar-radar-content"><canvas id="polar-radar-chart"></canvas></div>
                 </div>
                 <!-- Satellite info panel -->
                 <div id="satellite-info-panel" class="satellite-info-panel">
                     <div class="info-header">
-                        <h3 id="info-satellite-name">Satellite Info</h3>
+                        <h3 id="info-satellite-name">معلومات القمر</h3>
                         <div class="panel-controls">
                             <button id="minimize-satellite-info" class="minimize-button">−</button>
                             <button id="close-info-panel" class="close-button">×</button>
@@ -218,9 +254,7 @@
                 <!-- CSN Technologies S.A.T Panel -->
                 <div id="sat-panel" class="sat-panel">
                     <div class="info-header">
-                        <h3 id="sat-panel-title">CSN Technologies S.A.T</h3>
-                        <span id="sat-connection-badge" class="status-badge"></span>
-                        <div class="panel-controls">
+                        <h3 id="sat-panel-title">CSN Technologies S.A.T</h3><span id="sat-connection-badge" class="status-badge"></span><div class="panel-controls">
                             <button id="minimize-sat-panel" class="minimize-button">−</button>
                             <button id="close-sat-panel" class="close-button">×</button>
                         </div>
@@ -236,7 +270,7 @@
                                 <tr>
                                     <td>Azimuth:</td>
                                     <td id="sat-current-az">--</td>
-                                    <td>Elevation:</td>
+                                    <td>الارتفاع:</td>
                                     <td id="sat-current-el">--</td>
                                 </tr>
                             </table>
@@ -244,14 +278,19 @@
 
                         <!-- Transponder information -->
                         <div id="sat-transponder-info" class="sat-transponder-info">
-                            <h4>Transponder</h4>
-                            <div id="sat-transponder-desc">No transponder selected</div>
+                            <h4>جهاز الإرسال والاستقبال</h4>
+                            <div id="sat-transponder-desc">لم يتم تحديد أي جهاز إرسال واستقبال</div>
                             <div class="freq-grid">
-                                <div class="freq-label">Uplink:</div>
+                                <div class="freq-label">المسار الصاعد:</div>
                                 <div id="sat-uplink-freq">--</div>
                                 <div id="sat-uplink-mode">--</div>
+<<<<<<< HEAD
 
                                 <div class="freq-label">Downlink:</div>
+=======
+                                
+                                <div class="freq-label">المسار الهابط:</div>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 <div id="sat-downlink-freq">--</div>
                                 <div id="sat-downlink-mode">--</div>
                             </div>
@@ -259,7 +298,7 @@
                                 <div class="ctcss-container">
                                     <div class="freq-label"><label for="sat-ctcss-select">CTCSS:</label></div>
                                     <select id="sat-ctcss-select">
-                                        <option value="0">Off</option>
+                                        <option value="0">إيقاف</option>
                                         <option value="67">67</option>
                                         <option value="74">74.4</option>
                                         <option value="88">88.5</option>
@@ -270,12 +309,12 @@
                         </div>
                     </div>
                     <div class="sat-panel-buttons">
-                        <button id="sat-radio-toggle" class="sat-button sat-enabled">Radio Enabled</button>
-                        <button id="sat-lock-vfo" class="sat-button sat-enabled">Lock VFO</button>
-                        <button id="sat-center" class="sat-button sat-center">Center</button>
+                        <button id="sat-radio-toggle" class="sat-button sat-enabled">تم تمكين الراديو</button>
+                        <button id="sat-lock-vfo" class="sat-button sat-enabled">قفل VFO</button>
+                        <button id="sat-center" class="sat-button sat-center">المنتصف</button>
                     </div>
                     <div class="sat-panel-buttons sat-panel-buttons-secondary">
-                        <button id="sat-park" class="sat-button sat-park">Park Antennas</button>
+                        <button id="sat-park" class="sat-button sat-park">هوائيات الحديقة</button>
                     </div>
                 </div>
             </div>
@@ -485,15 +524,13 @@
     <div id="options-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Options</h2>
-                <span class="close">&times;</span>
-            </div>
+                <h2>خيارات</h2><span class="close">×</span></div>
 
             <div class="tab-navigation">
-                <button class="tab-button active" data-tab="satellites">Satellites</button>
-                <button class="tab-button" data-tab="general">General</button>
-                <button class="tab-button" data-tab="location">Observer Location</button>
-                <button class="tab-button" data-tab="radio">Radio</button>
+                <button class="tab-button active" data-tab="satellites">أقمار صناعية</button>
+                <button class="tab-button" data-tab="general">عام</button>
+                <button class="tab-button" data-tab="location">موقع المراقب</button>
+                <button class="tab-button" data-tab="radio">راديو</button>
                 <button class="tab-button" data-tab="hamsat">Hams.at</button>
                 <button class="tab-button" data-tab="aprs">APRS</button>
             </div>
@@ -503,18 +540,16 @@
                     <!-- Satellites Tab -->
                     <div class="tab-pane active" id="satellites-tab">
                         <div class="satellite-selector">
-                            <h3>Select Satellites</h3>
-                            <div class="search-container">
-                                <input type="text" id="satellite-search" placeholder="Search satellites...">
-                            </div>
+                            <h3>حدد الأقمار الصناعية</h3>
+                            <div class="search-container"><input type="text" id="satellite-search" placeholder="Search satellites..."></div>
                             <div id="satellite-list">
                                 <!-- Satellite checkboxes will be added here dynamically -->
                             </div>
                             <div class="modal-actions">
-                                <button id="select-all">Select All</button>
-                                <button id="deselect-all">Deselect All</button>
-                                <button id="refresh-tle">Refresh TLEs</button>
-                                <button id="show-manual-tle">Input TLEs Manually</button>
+                                <button id="select-all">حدد الكل</button>
+                                <button id="deselect-all">إلغاء تحديد الكل</button>
+                                <button id="refresh-tle">TLEs تحديث</button>
+                                <button id="show-manual-tle">يدويًا TLE إدخال</button>
                             </div>
                         </div>
                     </div>
@@ -522,6 +557,7 @@
                     <!-- General Tab -->
                     <div class="tab-pane" id="general-tab">
                         <div class="general-settings">
+<<<<<<< HEAD
                             <h3>General Settings</h3>
 
                             <!-- Notifications Section -->
@@ -546,6 +582,20 @@
                                         <p class="help-text">Send a sample notification to see how they will appear on your
                                             device.</p>
                                     </div>
+=======
+                            <h3>الإعدادات العامة</h3>
+                            
+                            <div class="notifications-section">
+                                <h4>إشعارات</h4>
+                                <div class="form-group">
+                                    <label><input type="checkbox" id="enable-notifications">
+                                        تفعيل إشعارات المرور</label>
+                                    <p class="help-text">سوف تتلقى إشعارات قبل 15 دقيقة من بدء مرور القمر الصناعي.</p>
+                                </div>
+                                <div class="form-group notification-test">
+                                    <button id="test-notification" class="button secondary">إشعار تجريبي</button>
+                                    <p class="help-text">أرسل إشعارًا تجريبياً لمعرفة كيفية ظهوره على جهازك.</p>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 </div>
                             </div>
 
@@ -693,29 +743,27 @@
 
                     <!-- Observer Location Tab -->
                     <div class="tab-pane" id="location-tab">
+<<<<<<< HEAD
                         <div class="settings-section-card">
                             <h3 style="display: flex; align-items: center; gap: 8px; margin-top: 0;">
                                 <i class="fa-solid fa-location-dot" style="color: #2c3e50; font-size: 1.2em;"></i>
                                 Observer Location
                             </h3>
+=======
+                        <div class="location-settings">
+                            <h3>موقع المراقب</h3>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                             <div class="location-form">
                                 <div class="form-group">
-                                    <label for="callsign">Callsign:</label>
-                                    <input type="text" id="callsign" placeholder="Enter your callsign">
-                                </div>
+                                    <label for="callsign">إشارة النداء:</label><input type="text" id="callsign" placeholder="Enter your callsign"></div>
                                 <div class="form-group">
-                                    <label for="latitude">Latitude:</label>
-                                    <input type="number" id="latitude" step="0.0001" value="51.5074">
-                                </div>
+                                    <label for="latitude">خط العرض:</label><input type="number" id="latitude" step="0.0001" value="51.5074"></div>
                                 <div class="form-group">
-                                    <label for="longitude">Longitude:</label>
-                                    <input type="number" id="longitude" step="0.0001" value="-0.1278">
-                                </div>
+                                    <label for="longitude">خط الطول:</label><input type="number" id="longitude" step="0.0001" value="-0.1278"></div>
                                 <div class="form-group">
-                                    <label for="elevation">Elevation (m):</label>
-                                    <input type="number" id="elevation" value="0">
-                                </div>
+                                    <label for="elevation">الارتفاع (م):</label><input type="number" id="elevation" value="0"></div>
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label for="min-elevation">Minimum Elevation (°):</label>
                                     <input type="number" id="min-elevation" value="0" min="0" max="90">
                                     <p class="help-text small-muted">Only show passes above this elevation angle</p>
@@ -725,6 +773,16 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><point x="12" y="12" r="3"></point></svg>
                                         Use My Location
                                     </button>
+=======
+                                    <label for="min-elevation">الحد الأدنى للارتفاع (°):</label><input type="number" id="min-elevation" value="0" min="0" max="90"><p class="help-text">إظهار الممرات فوق زاوية الارتفاع هذه فقط</p>
+                                </div>
+                                <div class="location-actions">
+                                    <button id="use-geolocation" title="استخدم موقعك الحالي"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <point x="12" y="12" r="3"></point>
+                                        </svg>
+                                        استخدم موقعي</button>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 </div>
                             </div>
                         </div>
@@ -733,18 +791,31 @@
                     <!-- Radio Tab -->
                     <div class="tab-pane" id="radio-tab">
                         <div class="radio-settings">
+<<<<<<< HEAD
                             <h3>Radio Settings</h3>
 
+=======
+                            <h3>إعدادات الراديو</h3>
+                            
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                             <!-- CSN Technologies S.A.T Configuration -->
                             <div class="settings-section-card" data-csn-config>
                                 <h4>CSN Technologies S.A.T</h4>
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label>
                                         <input type="checkbox" id="enable-csn-sat" name="enable-csn-sat">
                                         Enable CSN Technologies S.A.T
                                     </label>
                                     <input type="text" id="csn-sat-address" name="csn-sat-address"
                                         placeholder="Enter CSN S.A.T server address">
+=======
+                                    <label><input type="checkbox" id="enable-csn-sat">
+                                        CSN Technologies S.A.T تفعيل</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="csn-sat-address">عنوان IP أو النطاق:</label><input type="text" id="csn-sat-address" value="rotator.local" placeholder="Enter IP address or domain"><p class="help-text">أدخل عنوان IP أو النطاق الخاص ب CSN Technologies S.A.T</p>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 </div>
                             </div>
                             <hr>
@@ -765,48 +836,42 @@
                             <div class="settings-section-card">
                                 <h4>Cloudlog API</h4>
                                 <div class="form-group">
-                                    <label>
-                                        <input type="checkbox" id="enable-cloudlog">
-                                        Enable Cloudlog API
-                                    </label>
+                                    <label><input type="checkbox" id="enable-cloudlog">
+                                        تفعيل Cloudlog API</label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="cloudlog-url">Cloudlog URL:</label>
-                                    <input type="text" id="cloudlog-url" placeholder="https://your.cloudlog.domain">
-                                    <p class="help-text">Enter the base URL of your Cloudlog installation</p>
+                                    <label for="cloudlog-url">عنوان URL لـ Cloudlog:</label><input type="text" id="cloudlog-url" placeholder="https://your.cloudlog.domain"><p class="help-text">أدخل عنوان URL الأساسي لتثبيت Cloudlog الخاص بك</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="cloudlog-api-key">API Key:</label>
-                                    <input type="text" id="cloudlog-api-key" placeholder="Enter your Cloudlog API key">
-                                    <p class="help-text">Get your API key from your Cloudlog user settings</p>
+                                    <label for="cloudlog-api-key">مفتاح API:</label><input type="text" id="cloudlog-api-key" placeholder="Enter your Cloudlog API key"><p class="help-text">احصل على مفتاح API الخاص بك من إعدادات مستخدم Cloudlog الخاص بك</p>
                                 </div>
                             </div>
-                            <p>Additional radio configuration options will be added in a future update.</p>
+                            <p>ستتم إضافة إعدادات راديو إضافية في تحديث قادم.</p>
                         </div>
                     </div>
 
                     <!-- Hams.at Tab -->
                     <div class="tab-pane" id="hamsat-tab">
                         <div class="api-settings">
-                            <h3>Hams.at Configuration</h3>
+                            <h3>إعدادات Hams.at</h3>
                             <div class="api-form">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label for="hams-at-api-key">Hams.at API Key:</label>
                                     <input type="text" id="hams-at-api-key" placeholder="Enter your Hams.at API key">
                                     <p class="help-text">Get your API key from <a href="https://hams.at/users/settings"
                                             target="_blank" rel="noopener">hams.at account settings</a></p>
+=======
+                                    <label for="hams-at-api-key">مفتاح Hams.at API:</label><input type="text" id="hams-at-api-key" placeholder="Enter your Hams.at API key"><p class="help-text">Get your API key from <a href="https://hams.at/users/settings" target="_blank">hams.at account settings</a></p>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                                 </div>
                                 <div class="form-group">
-                                    <label>
-                                        <input type="checkbox" id="enable-roves" checked>
-                                        Enable Upcoming Roves
-                                    </label>
+                                    <label><input type="checkbox" id="enable-roves" checked>
+                                        تفعيل الجولات التشغيلية القادمة</label>
                                 </div>
                                 <div class="form-group">
-                                    <label>
-                                        <input type="checkbox" id="show-unworkable-roves">
-                                        Show Unworkable Roves
-                                    </label>
+                                    <label><input type="checkbox" id="show-unworkable-roves">
+                                         إظهار الجولات التشغيلية غير القابلة للتنفيذ</label>
                                 </div>
                             </div>
                         </div>
@@ -815,27 +880,21 @@
                     <!-- APRS Tab -->
                     <div class="tab-pane" id="aprs-tab">
                         <div class="aprs-settings">
-                            <h3>APRS Settings</h3>
+                            <h3>إعدادات APRS</h3>
                             <div class="form-group">
-                                <label>
-                                    <input type="checkbox" id="enable-aprs">
-                                    Enable APRS
-                                </label>
+                                <label><input type="checkbox" id="enable-aprs">
+                                    Enable APRS</label>
                             </div>
                             <div class="form-group">
-                                <label for="aprs-server">WebSocket Server:</label>
-                                <input type="text" id="aprs-server" placeholder="e.g. localhost">
-                            </div>
+                                <label for="aprs-server">خادم WebSocket:</label><input type="text" id="aprs-server" placeholder="e.g. localhost"></div>
                             <div class="form-group">
-                                <label for="aprs-port">WebSocket Port:</label>
-                                <input type="number" id="aprs-port" placeholder="e.g. 8765">
-                            </div>
+                                <label for="aprs-port">منفذ WebSocket:</label><input type="number" id="aprs-port" placeholder="e.g. 8765"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button id="save-options">Save & Close</button>
+                    <button id="save-options">Save &amp; Close</button>
                 </div>
             </div>
         </div>
@@ -845,11 +904,10 @@
     <div id="manual-tle-input" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Manual TLE Input</h2>
-                <span class="close manual-close">&times;</span>
-            </div>
+                <h2>Manual TLE Input</h2><span class="close manual-close">×</span></div>
             <div class="modal-body">
                 <div id="manual-tle-error" class="error-message"></div>
+<<<<<<< HEAD
                 <p>Paste TLE data in 3-line format (Satellite Name, TLE Line 1, TLE Line 2):</p>
                 <p class="format-example">Example format:<br>
                     AO-91 (FOX-1B)<br>
@@ -858,9 +916,15 @@
                 <textarea id="tles-textarea" rows="15" title="Enter TLE data here" placeholder="Paste TLE data in 3-line format"></textarea>
                 <p>You can get TLEs from <a href="https://tle.oscarwatch.org" rel="noopener"
                         target="_blank">https://tle.oscarwatch.org</a> or any other source.</p>
+=======
+                <p>الصق بيانات TLE بتنسيق 3 أسطر (اسم القمر الصناعي، سطر TLE 1، سطر TLE 2):</p>
+                <p class="format-example">مثال على التنسيق:<br> AO-91 (FOX-1B)<br>1 43017U 17073E 23150.09546759 .00001976 00000-0 15688-3 15688-3 0 9996<br>2 43017 97.7000 182.9558 0025675 32.2147 328.1059 14.78059046296268</p>
+                <textarea id="tles-textarea" rows="15"></textarea>
+                <p>يمكنك الحصول على TLEs من <a href="https://tle.oscarwatch.org" target="_blank">https://tle.oscarwatch.org</a> أو أي مصدر آخر.</p>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                 <div class="modal-actions">
                     <button id="submit-manual-tle">Submit TLEs</button>
-                    <button id="cancel-manual-tle">Cancel</button>
+                    <button id="cancel-manual-tle">إلغاء</button>
                 </div>
             </div>
         </div>
@@ -870,33 +934,32 @@
     <div id="schedule-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Satellite Pass Schedule</h2>
-                <span class="close schedule-close">&times;</span>
-            </div>
+                <h2>جدول مرور القمر</h2><span class="close schedule-close">×</span></div>
             <div class="modal-body">
                 <div class="schedule-controls">
                     <div class="form-group">
-                        <label for="schedule-satellite-filter">Filter by Satellite:</label>
+                        <label for="schedule-satellite-filter">تصفية حسب القمر:</label>
                         <select id="schedule-satellite-filter">
-                            <option value="all">All Satellites</option>
+                            <option value="all">جميع الأقمار</option>
                             <!-- Satellite options will be added dynamically -->
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="schedule-days">Schedule Days:</label>
+                        <label for="schedule-days">أيام الجدول:</label>
                         <select id="schedule-days">
-                            <option value="1">1 Day</option>
-                            <option value="3">3 Days</option>
-                            <option value="7">1 Week</option>
-                            <option value="14">2 Weeks</option>
+                            <option value="1">يوم</option>
+                            <option value="3">3 أيام</option>
+                            <option value="7">أسبوع</option>
+                            <option value="14">أسبوعين</option>
                         </select>
                     </div>
-                    <button id="refresh-schedule" class="refresh-button">Refresh</button>
+                    <button id="refresh-schedule" class="refresh-button">تحديث</button>
                 </div>
                 <div class="schedule-table-container">
                     <table id="pass-schedule-table" class="schedule-table">
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th>Satellite</th>
                                 <th>Start Time</th>
                                 <th>End Time</th>
@@ -904,6 +967,14 @@
                                 <th>Duration</th>
                                 <th>Status</th>
                                 <th>Calendar</th>
+=======
+                                <th>القمر:</th>
+                                <th>وقت البدء</th>
+                                <th>وقت الانتهاء</th>
+                                <th>أقصى ارتفاع</th>
+                                <th>المدة</th>
+                                <th>الحالة:</th>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                             </tr>
                         </thead>
                         <tbody id="pass-schedule-body">
@@ -919,34 +990,30 @@
     <div id="sked-planning-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Sked Planning</h2>
-                <span class="close sked-planning-close">&times;</span>
-            </div>
+                <h2>ترتيب موعد اتصال</h2><span class="close sked-planning-close">×</span></div>
             <div class="modal-body">
                 <div class="sked-planning-controls">
                     <div class="form-group">
-                        <label for="sked-observer2-grid">Remote Station Grid Square:</label>
-                        <input type="text" id="sked-observer2-grid" placeholder="e.g. IO91wm" maxlength="8">
-                        <div id="sked-observer2-coords" class="small-text"></div>
+                        <label for="sked-observer2-grid">الترقيم الشبكي للمحطة البعيدة:</label><input type="text" id="sked-observer2-grid" placeholder="e.g. IO91wm" maxlength="8"><div id="sked-observer2-coords" class="small-text"></div>
                     </div>
                     <div class="form-group">
-                        <label for="sked-satellite-filter">Filter by Satellite:</label>
+                        <label for="sked-satellite-filter">تصفية حسب القمر:</label>
                         <select id="sked-satellite-filter">
-                            <option value="all">All Satellites</option>
+                            <option value="all">جميع الأقمار</option>
                             <!-- Satellite options will be added dynamically -->
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="sked-days">Schedule Days:</label>
+                        <label for="sked-days">أيام الجدول:</label>
                         <select id="sked-days">
-                            <option value="1">1 Day</option>
-                            <option value="3">3 Days</option>
-                            <option value="7">1 Week</option>
-                            <option value="14">2 Weeks</option>
+                            <option value="1">يوم</option>
+                            <option value="3">3 أيام</option>
+                            <option value="7">أسبوع</option>
+                            <option value="14">أسبوعين</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="sked-min-elevation">Minimum Elevation (°):</label>
+                        <label for="sked-min-elevation">الحد الأدنى للارتفاع (°):</label>
                         <select id="sked-min-elevation">
                             <option value="-3">-3°</option>
                             <option value="-2">-2°</option>
@@ -961,6 +1028,7 @@
                             <option value="20">20°</option>
                         </select>
                     </div>
+<<<<<<< HEAD
                     <div class="form-group">
                         <label for="sked-timezone">Show times in:</label>
                         <select id="sked-timezone">
@@ -969,17 +1037,20 @@
                         </select>
                     </div>
                     <button id="refresh-sked-planning" class="refresh-button">Find Mutual Passes</button>
+=======
+                    <button id="refresh-sked-planning" class="refresh-button">البحث عن مرور متبادل</button>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                 </div>
                 <div class="schedule-table-container">
                     <table id="sked-planning-table" class="schedule-table">
                         <thead>
                             <tr>
-                                <th>Satellite</th>
-                                <th>Start Time</th>
-                                <th>End Time</th>
-                                <th>Your Max El</th>
-                                <th>Their Max El</th>
-                                <th>Duration</th>
+                                <th>القمر</th>
+                                <th>وقت البدء</th>
+                                <th>وقت الانتهاء</th>
+                                <th>ارتفاعك الأقصى</th>
+                                <th>ارتفاعهم الأقصى</th>
+                                <th>المدة</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -996,12 +1067,11 @@
     <div id="help-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Help</h2>
-                <span class="close help-close">&times;</span>
-            </div>
+                <h2>مساعدة</h2><span class="close help-close">×</span></div>
             <div class="modal-body">
                 <div class="help-content">
                     <section class="help-section">
+<<<<<<< HEAD
                         <h3>Getting Started</h3>
                         <p>Zenith is a satellite tracking application that helps you monitor satellite passes, plan
                             contacts, and track amateur radio satellites.</p>
@@ -1011,6 +1081,15 @@
                                 satellites to track.</li>
                             <li>Browse the map to see real-time satellite positions and footprints.</li>
                             <li>View upcoming passes in the sidebar panel on the left.</li>
+=======
+                        <h3>ابدء</h3>
+                        <p>Zenith هو تطبيق لتتبع الأقمار الصناعية يساعدك على مراقبة مرور الأقمار الصناعية وتخطيط الاتصالات وتتبع الأقمار الصناعية لهواة الراديو.</p>
+                        <p>للبدء:</p>
+                        <ol>
+                            <li>انقر على <strong>Options</strong> لتهيئة موقعك وتحديد الأقمار الصناعية لتتبعها.</li>
+                            <li>تصفح الخريطة لرؤية مواقع الأقمار الصناعية وآثارها أنيا.</li>
+                            <li>قم بعرض المرور القادم في لوحة الشريط الجانبي على اليسار.</li>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
                         </ol>
                     </section>
 
@@ -1029,7 +1108,7 @@
 
                     <section class="help-section">
                         <h3>Map Navigation</h3>
-                        <p>The main map shows Earth with satellite positions in real-time:</p>
+                        <p>تُظهر الخريطة الرئيسية الأرض مع مواقع الأقمار الصناعية في الوقت الفعلي:</p>
                         <ul>
                             <li><strong>Zoom</strong>: Use the scroll wheel or +/- buttons</li>
                             <li><strong>Pan</strong>: Click and drag the map</li>
@@ -1045,7 +1124,7 @@
                             <li>Click <strong>Options</strong> and go to the "Satellites" tab</li>
                             <li>Check the boxes for satellites you want to track</li>
                             <li>Use the search box to filter the satellite list</li>
-                            <li>Click <strong>Save & Close</strong> to apply your selection</li>
+                            <li>Click <strong>Save &amp; Close</strong> to apply your selection</li>
                         </ol>
                     </section>
 
@@ -1100,12 +1179,13 @@
                             compatible rotators and radios.</p>
                         <p>To configure:</p>
                         <ol>
-                            <li>Go to <strong>Options</strong> > "Radio" tab</li>
+                            <li>Go to <strong>Options</strong> &gt; "Radio" tab</li>
                             <li>Enable CSN Technologies S.A.T integration</li>
                             <li>Enter your device's IP address or domain name</li>
                         </ol>
                     </section>
 
+<<<<<<< HEAD
                     <section class="help-section">
                         <h3>QTRigDoppler Integration</h3>
                         <p>Zenith supports QTRigDoppler for advanced radio and rotator control:</p>
@@ -1153,6 +1233,50 @@
                         </ol>
                     </section>
                 </div>
+=======
+    <!-- APRS Panel -->
+    <div id="aprs-panel" class="aprs-panel">
+        <div class="info-header">
+            <h3 id="aprs-panel-title">APRS</h3>
+            <button id="aprs-toggle-debug" class="aprs-button debug-button">Show Debug</button>
+            <div class="panel-controls">
+                <button id="minimize-aprs-panel" class="minimize-button">−</button>
+                <button id="close-aprs-panel" class="close-button">×</button>
+            </div>
+        </div>
+        <div class="aprs-panel-content">
+            <div id="aprs-messages" class="aprs-messages"></div>
+            <div class="aprs-macros">
+                <button id="aprs-cq" class="aprs-button">CQ</button>
+                <button id="aprs-call-rpt" class="aprs-button">CALL RPT &amp; GRID</button>
+                <button id="aprs-tu73" class="aprs-button">TU 73</button>
+            </div>
+            <div class="aprs-controls">
+                <div class="form-group">
+                    <label for="aprs-to">To callsign:</label><input type="text" id="aprs-to" placeholder="To callsign" value="CQ"></div>
+                <div class="form-group">
+                    <label for="aprs-via">Via path:</label><input type="text" id="aprs-via" placeholder="Via path" value="WIDE1-1,WIDE2-1"></div>
+                <div class="form-group">
+                    <label for="aprs-message">Message:</label><input type="text" id="aprs-message" placeholder="Message text"></div>
+                <div class="aprs-buttons">
+                    <button id="aprs-send-message" class="aprs-button">Send Message</button>
+                    <button id="aprs-send-position" class="aprs-button">Send Position</button>
+                </div>
+            </div>
+            <div class="aprs-table-container">
+                <table id="aprs-packets-table" class="aprs-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+>>>>>>> b514fb5 (78% translation to Arabic done according to)
             </div>
         </div>
     </div>
